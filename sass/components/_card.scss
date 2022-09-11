@@ -1,0 +1,140 @@
+.card {
+  perspective: 200rem;
+  position: relative;
+  height: 50rem; 
+
+  &__side {
+    height: 50rem;
+    // background-color: orangered;
+    transition: all .9s;
+    position: absolute;
+    top:0;
+    left: 0;
+    backface-visibility: hidden;
+    width: 100%;
+    box-shadow: 0 1.5rem 4rem black;
+    border-radius: .5rem;
+    overflow: hidden;
+    transition: all .9s;
+
+    &-front {
+      background-color: $color-white;
+    }
+  
+    &-back {
+      // background-color: green;
+      transform: rotateY(180deg);
+
+      &-1 {
+        background-image: linear-gradient(to bottom right, $card-color1-light, $card-color1-dark);
+      }
+
+      &-2 {
+        background-image: linear-gradient(to bottom right, $card-color2-light, $card-color2-dark);
+      }
+
+      &-3 {
+        background-image: linear-gradient(to bottom right, $card-color3-light, $card-color3-dark);
+      }
+    }
+  }
+
+  &:hover &__side-front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side-back {
+    transform: rotateY(0deg);
+  }
+
+  &__picture {
+    height: 26rem;
+    background-blend-mode: screen;
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    background-repeat: no-repeat;
+
+    &--1 {
+      background-image: linear-gradient(to right bottom, rgba(orangered, .8), rgba(orangered, .8)),url(../img/CardImage1.jpg);
+    }
+    
+    &--2 {
+      background-image: url(../img/CardImage2.jpg);
+    }
+
+    &--3 {
+      background-image: url(../img/CardImage3.jpg);
+    }
+  }
+
+  &__heading {
+    color: $color-white;
+    font-size: 2.5rem;
+    font-weight: 300;
+    top: 13rem;
+    right: 2rem;
+    position: absolute;
+    text-align: right;
+    width: 75%;
+    overflow-wrap: break-word;
+  }
+
+  &__heading-span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+
+    &--1 {
+      background-image: linear-gradient(to right bottom, rgba(orangered, .8), rgba(orangered, .8))
+    }
+
+    &--2 {
+      background-image: linear-gradient(to right bottom, rgba(rgb(175, 2, 255), .8), rgba(rgb(68, 5, 97), .8));
+    }
+
+    &--3 {
+      background-image: linear-gradient(to right bottom, rgba(rgb(74, 255, 50), .8), rgba(rgb(17, 124, 7), .8));
+    }
+  }
+
+  &__details {
+
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+        color: green;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-gray;
+        }
+      }
+    }
+  }
+
+  &__cta {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    // transform: translate(-50%, -50%);
+  }
+
+  &__price-box {
+    text-align: center;
+  }
+
+  &__price-title {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: $color-white;
+  }
+
+  &__price-amount {
+    font-size: 6rem;
+    font-weight: 100;
+  }
+}

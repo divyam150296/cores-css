@@ -1,0 +1,33 @@
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variable";
+
+@import "base/animation";
+@import "base/typography";
+@import "base/utilities";
+@import "base/base";
+@import "layout/grid";
+
+@import "components/button";
+@import "components/composition";
+@import "components/feature-box";
+@import "components/form";
+@import "components/card";
+@import "components/story";
+
+@import "pages/home";
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+  //This is make 1rem to 10px instead of 16px
+}
+
+
+

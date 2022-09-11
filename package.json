@@ -1,0 +1,14 @@
+{
+  "name": "css-revision",
+  "version": "1.0.0",
+  "description": "css course",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass" : "sass sass/main.scss css/style.css -w"
+  },
+  "author": "Divyam",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.54.4"
+  }
+}

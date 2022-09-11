@@ -1,0 +1,41 @@
+.composition {
+  position: relative;
+  height: auto;
+
+  &__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 2rem $color-black;
+    border-radius: 5rem;
+    position: absolute;
+    outline-offset : 1rem;
+    transition: all .2s;
+    z-index: 1;
+
+    &--p1 {
+      left: -1rem;
+      top: -2rem;
+    }
+
+    &--p2 {
+      right: 0rem;
+      top: 2rem;
+    }
+    
+    &--p3 {
+      top: 15rem;
+      right: 0px;
+    }
+
+    &:hover {
+      border-radius: 0rem;
+      outline: 1.5rem solid rgb(255, 238, 0);
+      // background-color: violet;
+      z-index: 2;
+      transform: scale(1.05);
+    }
+  }
+
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.9);
+  }
+}
